@@ -12,7 +12,7 @@
     <groupId>ru.job4j</groupId>
     <artifactId>job4j_cars</artifactId>
     <version>1.0</version>
-    <name>Job4j Dream Job</name>
+    <name>Job4j Cars</name>
 
     <profiles>
         <profile>
@@ -30,7 +30,7 @@
         <profile>
             <id>production</id>
             <properties>
-                <db.url>jdbc:postgresql://127.0.0.1:5432/dreamjob</db.url>
+                <db.url>jdbc:postgresql://127.0.0.1:5432/cars</db.url>
                 <db.username>postgres</db.username>
                 <db.password>258Yes129Msa</db.password>
                 <db.driver>org.postgresql.Driver</db.driver>
@@ -99,6 +99,17 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
             <version>2.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.11.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
