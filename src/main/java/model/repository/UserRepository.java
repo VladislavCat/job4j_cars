@@ -77,10 +77,10 @@ public class UserRepository {
      * @return пользователь.
      */
     public Optional<User> findById(int id) {
-        Optional<User> rsl = Optional.empty();
+        Optional rsl = Optional.empty();
         try (Session session = sf.openSession()) {
             Query query = session.createQuery("from User where id = :fId").setParameter("fId", id);
-            rsl = Optional.of((User) query.list().get(0));
+            rsl = (query.uniqueResultOptional());
         } catch (Exception e) {
             e.printStackTrace();
         }
