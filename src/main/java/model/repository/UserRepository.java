@@ -64,23 +64,23 @@ public class UserRepository {
     public List<User> findAllOrderById() {
         List<User> rsl = new ArrayList<>();
         try (Session session = sf.openSession()) {
-            Query query = session.createQuery("from User");
-            for (Object st : query.list()) {
-                rsl.add((User) st);
-            }
+            Query<User> query = session.createQuery("from User", User.class);
+            rsl.addAll(query.list());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return rsl;
     }
-
     /**
      * Найти пользователя по ID
      * @return пользователь.
      */
     public Optional<User> findById(int id) {
-        Optional rsl = Optional.empty();
+        Optional<User> rsl = Optional.empty();
         try (Session session = sf.openSession()) {
-            Query query = session.createQuery("from User where id = :fId").setParameter("fId", id);
-            rsl = (query.uniqueResultOptional());
+            Query<User> query = session.createQuery("from User where id = :fId", User.class)
+                    .setParameter("fId", id);
+            rsl = query.uniqueResultOptional();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -95,10 +95,11 @@ public class UserRepository {
     public List<User> findByLikeLogin(String key) {
         List<User> rsl = new ArrayList<>();
         try (Session session = sf.openSession()) {
-            Query query = session.createQuery("from User as u where u.username like :fKey").setParameter("fKey", key);
-            for (Object st : query.list()) {
-                rsl.add((User) st);
-            }
+            Query<User> query = session.createQuery("from User as u where u.username like :fKey", User.class)
+                    .setParameter("fKey", key);
+            rsl.addAll(query.list());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return rsl;
     }
@@ -110,8 +111,9 @@ public class UserRepository {
     public Optional<User> findByLogin(String login) {
         Optional<User> rsl = Optional.empty();
         try (Session session = sf.openSession()) {
-            Query query = session.createQuery("from User where username = :fUsername").setParameter("fUsername", login);
-            rsl = Optional.of((User) query.list().get(0));
+            Query<User> query = session.createQuery("from User where username = :fUsername", User.class)
+                    .setParameter("fUsername", login);
+            rsl = query.uniqueResultOptional();
         } catch (Exception e) {
             e.printStackTrace();
         }
