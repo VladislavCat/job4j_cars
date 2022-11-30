@@ -19,5 +19,5 @@ public class PriceHistory {
     private int before;
     @NonNull
     private int after;
-    private LocalDateTime ldt;
+    private LocalDateTime created;
 }
