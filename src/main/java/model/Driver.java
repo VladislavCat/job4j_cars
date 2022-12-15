@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "drivers")
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
