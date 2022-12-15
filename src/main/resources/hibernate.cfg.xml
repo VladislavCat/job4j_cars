@@ -15,5 +15,8 @@
         <mapping class="model.Post"/>
         <mapping class="model.PriceHistory"/>
         <mapping class="model.User" />
+        <mapping class="model.Car" />
+        <mapping class="model.Engine" />
+        <mapping class="model.Driver" />
     </session-factory>
 </hibernate-configuration>
