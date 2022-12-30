@@ -8,12 +8,12 @@ import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 @AllArgsConstructor
 public class PostRepository {
     private final CrudRepository crudRepository;
-    private final static long MILLISECONDSINDAY = 86400000;
 
     public void addPost(Post post) {
         crudRepository.run(session -> session.persist(post));
@@ -26,11 +26,15 @@ public class PostRepository {
     }
 
     public List<Post> findPostWithPhoto() {
-        return crudRepository.query("from Post p where p.photo != null", Post.class);
+        return crudRepository.query("from Post p where p.photo != :fBytea", Post.class, Map.of("fBytea", new byte[]{}));
     }
 
     public List<Post> findPostSpecificBrand(String brand) {
         return crudRepository.query("from Post p where p.name = :fBrand",
                 Post.class, Map.of("fBrand", brand));
+    }
+
+    public Optional<Post> findById(int id) {
+        return crudRepository.optional("from Post p where p.id = :fId", Post.class, Map.of("fId", id));
     }
 }

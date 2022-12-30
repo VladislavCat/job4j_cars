@@ -12,16 +12,19 @@ import java.util.List;
 @Table(name = "auto_post")
 @Data
 @ToString(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ToString.Include
+    @EqualsAndHashCode.Include
     private int id;
     @NonNull
     @Column(name = "auto_name")
     @ToString.Include
+    @EqualsAndHashCode.Include
     private String name;
     @NonNull
     @ToString.Include
@@ -29,7 +32,6 @@ public class Post {
     @NonNull
     @ToString.Include
     private LocalDateTime created;
-    @NonNull
     @ManyToOne
     @JoinColumn(name = "auto_user_id")
     private User user;
