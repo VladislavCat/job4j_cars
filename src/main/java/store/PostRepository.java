@@ -20,9 +20,9 @@ public class PostRepository {
     }
 
     public List<Post> findPostForLastDay() {
-        Date date = new Date(new java.util.Date().getTime() - MILLISECONDSINDAY);
+        LocalDateTime ldl = LocalDateTime.now().minusDays(1);
         return crudRepository.query("from Post p where p.created >= :fDate",
-                Post.class, Map.of("fDate", date));
+                Post.class, Map.of("fDate", ldl));
     }
 
     public List<Post> findPostWithPhoto() {

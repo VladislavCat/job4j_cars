@@ -3,6 +3,7 @@ package model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Post {
     private String description;
     @NonNull
     @ToString.Include
-    private Date created;
+    private LocalDateTime created;
     @NonNull
     @ManyToOne
     @JoinColumn(name = "auto_user_id")
