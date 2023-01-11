@@ -8,15 +8,17 @@
         <property name="hibernate.connection.url">jdbc:postgresql://127.0.0.1:5432/cars</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">258Yes129Msa</property>
-        <property name="hibernate.connection.pool_size">1</property>
+        <property name="hibernate.connection.pool_size">5</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <mapping class="model.Post"/>
-        <mapping class="model.PriceHistory"/>
-        <mapping class="model.User" />
-        <mapping class="model.Car" />
-        <mapping class="model.Engine" />
-        <mapping class="model.Driver" />
+        <mapping class="cars.model.Post"/>
+        <mapping class="cars.model.PriceHistory"/>
+        <mapping class="cars.model.User" />
+        <mapping class="cars.model.Car" />
+        <mapping class="cars.model.Body" />
+        <mapping class="cars.model.Brand" />
+        <mapping class="cars.model.Engine" />
+        <mapping class="cars.model.Driver" />
     </session-factory>
 </hibernate-configuration>
