@@ -1,4 +1,4 @@
-package model;
+package cars.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,11 +21,12 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "engine_id")
     private Engine engine;
-    @ManyToMany
-    @JoinTable(
-            name = "history_owner",
-            joinColumns = {@JoinColumn(name = "car_id")},
-            inverseJoinColumns = {@JoinColumn(name = "driver_id")}
-    )
-    private Set<Driver> driverSet;
+    @NonNull
+    @ManyToOne
+    @JoinColumn(name = "body_id")
+    private Body body;
+    @NonNull
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
 }

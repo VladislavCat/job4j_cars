@@ -1,11 +1,10 @@
-package model;
+package cars.model;
 
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -39,15 +38,13 @@ public class Post {
     @JoinColumn(name = "auto_post_id")
     @ToString.Exclude
     private List<PriceHistory> priceHistoryList = new ArrayList<>();
-    @ManyToMany
-    @JoinTable(
-            name = "participates",
-            joinColumns = { @JoinColumn(name = "post_id") },
-            inverseJoinColumns = { @JoinColumn(name = "user_id") }
-    )
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "car_id")
     @ToString.Exclude
-    private List<User> participates = new ArrayList<>();
+    private Car car;
     @Column(name = "car_photo")
     @NonNull
     private byte[] photo;
+    @NonNull
+    private boolean status;
 }

@@ -1,15 +1,14 @@
-package model;
+package cars.model;
 
 import lombok.*;
 
 import javax.persistence.*;
 
 @Data
-@Entity
-@Table(name = "engines")
+@Entity(name = "bodies")
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class Engine {
+public class Body {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

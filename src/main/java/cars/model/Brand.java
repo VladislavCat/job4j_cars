@@ -1,23 +1,23 @@
-package model;
+package cars.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
-@Entity
-@Table(name = "auto_user")
+@Entity(name = "brands")
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class User {
+public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NonNull
-    private String username;
-    @NonNull
-    private String password;
+    private String name;
 }
