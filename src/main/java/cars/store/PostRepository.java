@@ -1,10 +1,9 @@
-package store;
+package cars.store;
 
+import cars.model.Post;
 import lombok.AllArgsConstructor;
-import model.Post;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +16,10 @@ public class PostRepository {
 
     public void addPost(Post post) {
         crudRepository.run(session -> session.persist(post));
+    }
+
+    public List<Post> findAll() {
+        return crudRepository.query("from Post", Post.class);
     }
 
     public List<Post> findPostForLastDay() {

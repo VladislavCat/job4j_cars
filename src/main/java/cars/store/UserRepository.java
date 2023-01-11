@@ -1,12 +1,15 @@
-package store;
+package cars.store;
 
 import lombok.AllArgsConstructor;
-import model.User;
-import store.CrudRepository;
+import cars.model.User;
+import org.springframework.stereotype.Repository;
+import cars.store.CrudRepository;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+@Repository
 @AllArgsConstructor
 public class UserRepository {
     public final CrudRepository crudRepository;
@@ -67,5 +70,10 @@ public class UserRepository {
      */
     public Optional<User> findByLogin(String login) {
         return crudRepository.optional("from User where username = :fLogin", User.class, Map.of("fLogin", login));
+    }
+
+    public Optional<User> findUserByUsernameAndPassword(String username, String password) {
+        return crudRepository.optional("from User where username = :fUsername and password = :fPassword",
+                User.class, Map.of("fUsername", username, "fPassword", password));
     }
 }
