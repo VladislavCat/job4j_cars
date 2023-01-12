@@ -1,4 +1,4 @@
-package cars.model;
+package ru.job4j.cars.model;
 
 import lombok.*;
 

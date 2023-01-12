@@ -1,6 +1,6 @@
-package cars.store;
+package ru.job4j.cars.repository;
 
-import cars.model.Post;
+import ru.job4j.cars.model.Post;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 

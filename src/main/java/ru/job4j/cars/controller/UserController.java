@@ -1,12 +1,12 @@
-package cars.controller;
+package ru.job4j.cars.controller;
 
 import lombok.AllArgsConstructor;
-import cars.model.User;
+import ru.job4j.cars.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import cars.service.UserService;
-import cars.util.UserName;
+import ru.job4j.cars.service.UserService;
+import ru.job4j.cars.util.UserName;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

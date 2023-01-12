@@ -1,8 +1,8 @@
-package cars.service;
+package ru.job4j.cars.service;
 import lombok.AllArgsConstructor;
-import cars.model.User;
+import ru.job4j.cars.model.User;
 import org.springframework.stereotype.Service;
-import cars.store.UserRepository;
+import ru.job4j.cars.repository.UserRepository;
 
 import java.util.Optional;
 

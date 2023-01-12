@@ -1,9 +1,8 @@
-package cars.store;
+package ru.job4j.cars.repository;
 
 import lombok.AllArgsConstructor;
-import cars.model.User;
+import ru.job4j.cars.model.User;
 import org.springframework.stereotype.Repository;
-import cars.store.CrudRepository;
 
 import java.util.List;
 import java.util.Map;

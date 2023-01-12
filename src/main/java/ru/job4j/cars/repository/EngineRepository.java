@@ -1,7 +1,7 @@
-package cars.store;
+package ru.job4j.cars.repository;
 
 import lombok.AllArgsConstructor;
-import cars.model.Engine;
+import ru.job4j.cars.model.Engine;
 import org.springframework.stereotype.Repository;
 
 @Repository

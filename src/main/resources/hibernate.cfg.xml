@@ -12,13 +12,13 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <mapping class="cars.model.Post"/>
-        <mapping class="cars.model.PriceHistory"/>
-        <mapping class="cars.model.User" />
-        <mapping class="cars.model.Car" />
-        <mapping class="cars.model.Body" />
-        <mapping class="cars.model.Brand" />
-        <mapping class="cars.model.Engine" />
-        <mapping class="cars.model.Driver" />
+        <mapping class="ru.job4j.cars.model.Post"/>
+        <mapping class="ru.job4j.cars.model.PriceHistory"/>
+        <mapping class="ru.job4j.cars.model.User" />
+        <mapping class="ru.job4j.cars.model.Car" />
+        <mapping class="ru.job4j.cars.model.Body" />
+        <mapping class="ru.job4j.cars.model.Brand" />
+        <mapping class="ru.job4j.cars.model.Engine" />
+        <mapping class="ru.job4j.cars.model.Driver" />
     </session-factory>
 </hibernate-configuration>

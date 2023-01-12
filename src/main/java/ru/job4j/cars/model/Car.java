@@ -1,11 +1,10 @@
-package cars.model;
+package ru.job4j.cars.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity

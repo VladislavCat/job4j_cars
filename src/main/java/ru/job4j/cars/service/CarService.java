@@ -1,9 +1,9 @@
-package cars.service;
+package ru.job4j.cars.service;
 
 import lombok.RequiredArgsConstructor;
-import cars.model.Car;
+import ru.job4j.cars.model.Car;
 import org.springframework.stereotype.Service;
-import cars.store.CarRepository;
+import ru.job4j.cars.repository.CarRepository;
 
 import java.util.List;
 

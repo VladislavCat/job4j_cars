@@ -1,6 +1,6 @@
-package cars.util;
+package ru.job4j.cars.util;
 
-import cars.model.User;
+import ru.job4j.cars.model.User;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpSession;
