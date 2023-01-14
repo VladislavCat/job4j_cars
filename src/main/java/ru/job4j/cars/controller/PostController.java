@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 
 @Controller
 @RequiredArgsConstructor
-public class PostController {
+public class PostController implements PostControllerInterface {
     private final ru.job4j.cars.service.PostService postService;
     private final CarService carService;
 

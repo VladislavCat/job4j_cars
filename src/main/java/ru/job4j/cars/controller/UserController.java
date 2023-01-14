@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Controller
 @AllArgsConstructor
-public class UserController {
+public class UserController implements UserControllerInterface {
     private final UserService userService;
 
     @GetMapping("/loginPage")
@@ -64,5 +64,4 @@ public class UserController {
         UserName.userSessionSetName(model, session);
         return "profile";
     }
-
 }

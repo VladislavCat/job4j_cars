@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CarService {
+public class CarService implements CarServiceInterface {
     private final CarRepository carRepository;
 
     public List<Car> findAll() {

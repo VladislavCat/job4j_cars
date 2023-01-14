@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class PostService {
+public class PostService implements PostServiceInterface {
     private final PostRepository store;
 
     public void addPost(Post post) {

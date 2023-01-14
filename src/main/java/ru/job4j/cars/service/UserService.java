@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class UserService {
+public class UserService implements UserServiceInterface {
     private final UserRepository userStore;
 
     public User add(User user) {
