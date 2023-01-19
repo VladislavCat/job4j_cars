@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @AllArgsConstructor
-public class EngineRepository {
+public class HibernateEngineRepository {
     private final CrudRepository crudRepository;
 
     public void addEngine(Engine engine) {

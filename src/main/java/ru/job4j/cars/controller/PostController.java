@@ -73,7 +73,7 @@ public class PostController implements PostControllerInterface {
         return ResponseEntity.ok()
                 .headers(new HttpHeaders())
                 .contentLength(post.getPhoto().length)
-                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(new ByteArrayResource(post.getPhoto()));
     }
 }
